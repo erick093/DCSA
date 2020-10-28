@@ -34,7 +34,6 @@ stop_words = set(stopwords.words(lang))
 class MRCommonKeyWords(MRJob):
 
     def mapper(self, _, line):
-
         columns = re.split(r"[\t]", line)
         if columns[1] == "short" or columns[1] == "movie":
             no_punctuation = "".join([char for char in columns[2] if char not in string.punctuation])
