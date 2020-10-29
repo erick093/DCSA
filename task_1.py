@@ -51,8 +51,8 @@ class MRCommonKeyWords(MRJob):
 
     def filter(self, _, data):
         list_counts = []
-        for word, count in data:
-            list_counts.append((word, count))
+        for count, word in data: #check this #not_fixed
+            list_counts.append((count, word))
         sorted_list = sorted(list_counts, key=lambda x: x[0], reverse=True)
         for i in range(50):
             yield sorted_list[i]
