@@ -1,12 +1,13 @@
 from mrjob.job import MRJob
 from mrjob.step import MRStep
 import re
+import datetime
 
 class MRBestCustomers(MRJob):
 
     def mapper(self, _, line):
         columns = re.split(r",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", line)
-        if not columns[3].isalpha():
+        if not columns[3].isalpha(): # avoid the first row of the data.
             c_id = columns[6]
             amount = int(columns[3])*float(columns[5])
             match_year = re.search('\d{4}', columns[4])
