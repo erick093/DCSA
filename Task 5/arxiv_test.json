@@ -1,0 +1,35 @@
+[
+  {
+    "author": "[{'name': 'Ahmed Osman'}, {'name': 'Wojciech Samek'}]",
+    "day": 1,
+    "id": "1802.00209v1",
+    "link": "[{'rel': 'alternate', 'href': 'http://arxiv.org/abs/1802.00209v1', 'type': 'text/html'}, {'rel': 'related', 'href': 'http://arxiv.org/pdf/1802.00209v1', 'type': 'application/pdf', 'title': 'pdf'}]",
+    "month": 2,
+    "summary": "We propose an architecture for VQA which utilizes recurrent layers to\ngenerate visual and textual attention. The memory characteristic of the\nproposed recurrent attention units offers a rich joint embedding of visual and\ntextual features and enables the model to reason relations between several\nparts of the image and question. Our single model outperforms the first place\nwinner on the VQA 1.0 dataset, performs within margin to the current\nstate-of-the-art ensemble model. We also experiment with replacing attention\nmechanisms in other state-of-the-art models with our implementation and show\nincreased accuracy. In both cases, our recurrent attention mechanism improves\nperformance in tasks requiring sequential or relational reasoning on the VQA\ndataset.",
+    "tag": "[{'term': 'cs.AI', 'scheme': 'http://arxiv.org/schemas/atom', 'label': None}, {'term': 'cs.CL', 'scheme': 'http://arxiv.org/schemas/atom', 'label': None}, {'term': 'cs.CV', 'scheme': 'http://arxiv.org/schemas/atom', 'label': None}, {'term': 'cs.NE', 'scheme': 'http://arxiv.org/schemas/atom', 'label': None}, {'term': 'stat.ML', 'scheme': 'http://arxiv.org/schemas/atom', 'label': None}]",
+    "title": "Dual Recurrent Attention Units for Visual Question Answering",
+    "year": 2018
+  },
+  {
+    "author": "[{'name': 'Ji Young Lee'}, {'name': 'Franck Dernoncourt'}]",
+    "day": 12,
+    "id": "1603.03827v1",
+    "link": "[{'rel': 'alternate', 'href': 'http://arxiv.org/abs/1603.03827v1', 'type': 'text/html'}, {'rel': 'related', 'href': 'http://arxiv.org/pdf/1603.03827v1', 'type': 'application/pdf', 'title': 'pdf'}]",
+    "month": 3,
+    "summary": "Recent approaches based on artificial neural networks (ANNs) have shown\npromising results for short-text classification. However, many short texts\noccur in sequences (e.g., sentences in a document or utterances in a dialog),\nand most existing ANN-based systems do not leverage the preceding short texts\nwhen classifying a subsequent one. In this work, we present a model based on\nrecurrent neural networks and convolutional neural networks that incorporates\nthe preceding short texts. Our model achieves state-of-the-art results on three\ndifferent datasets for dialog act prediction.",
+    "tag": "[{'term': 'cs.CL', 'scheme': 'http://arxiv.org/schemas/atom', 'label': None}, {'term': 'cs.AI', 'scheme': 'http://arxiv.org/schemas/atom', 'label': None}, {'term': 'cs.LG', 'scheme': 'http://arxiv.org/schemas/atom', 'label': None}, {'term': 'cs.NE', 'scheme': 'http://arxiv.org/schemas/atom', 'label': None}, {'term': 'stat.ML', 'scheme': 'http://arxiv.org/schemas/atom', 'label': None}]",
+    "title": "Sequential Short-Text Classification with Recurrent and Convolutional\n  Neural Networks",
+    "year": 2016
+  },
+  {
+    "author": "[{'name': 'Iulian Vlad Serban'}, {'name': 'Tim Klinger'}, {'name': 'Gerald Tesauro'}, {'name': 'Kartik Talamadupula'}, {'name': 'Bowen Zhou'}, {'name': 'Yoshua Bengio'}, {'name': 'Aaron Courville'}]",
+    "day": 2,
+    "id": "1606.00776v2",
+    "link": "[{'rel': 'alternate', 'href': 'http://arxiv.org/abs/1606.00776v2', 'type': 'text/html'}, {'rel': 'related', 'href': 'http://arxiv.org/pdf/1606.00776v2', 'type': 'application/pdf', 'title': 'pdf'}]",
+    "month": 6,
+    "summary": "We introduce the multiresolution recurrent neural network, which extends the\nsequence-to-sequence framework to model natural language generation as two\nparallel discrete stochastic processes: a sequence of high-level coarse tokens,\nand a sequence of natural language tokens. There are many ways to estimate or\nlearn the high-level coarse tokens, but we argue that a simple extraction\nprocedure is sufficient to capture a wealth of high-level discourse semantics.\nSuch procedure allows training the multiresolution recurrent neural network by\nmaximizing the exact joint log-likelihood over both sequences. In contrast to\nthe standard log- likelihood objective w.r.t. natural language tokens (word\nperplexity), optimizing the joint log-likelihood biases the model towards\nmodeling high-level abstractions. We apply the proposed model to the task of\ndialogue response generation in two challenging domains: the Ubuntu technical\nsupport domain, and Twitter conversations. On Ubuntu, the model outperforms\ncompeting approaches by a substantial margin, achieving state-of-the-art\nresults according to both automatic evaluation metrics and a human evaluation\nstudy. On Twitter, the model appears to generate more relevant and on-topic\nresponses according to automatic evaluation metrics. Finally, our experiments\ndemonstrate that the proposed model is more adept at overcoming the sparsity of\nnatural language and is better able to capture long-term structure.",
+    "tag": "[{'term': 'cs.CL', 'scheme': 'http://arxiv.org/schemas/atom', 'label': None}, {'term': 'cs.AI', 'scheme': 'http://arxiv.org/schemas/atom', 'label': None}, {'term': 'cs.LG', 'scheme': 'http://arxiv.org/schemas/atom', 'label': None}, {'term': 'cs.NE', 'scheme': 'http://arxiv.org/schemas/atom', 'label': None}, {'term': 'stat.ML', 'scheme': 'http://arxiv.org/schemas/atom', 'label': None}, {'term': 'I.5.1; I.2.7', 'scheme': 'http://arxiv.org/schemas/atom', 'label': None}]",
+    "title": "Multiresolution Recurrent Neural Networks: An Application to Dialogue\n  Response Generation",
+    "year": 2016
+  }
+]
