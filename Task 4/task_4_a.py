@@ -2,7 +2,7 @@ from mrjob.job import MRJob
 from mrjob.step import MRStep
 import re
 
-class MRBestCustomers(MRJob):
+class MRBestSellingProduct(MRJob):
 
     def mapper_get_quantities(self, _, line):
         '''
@@ -15,7 +15,7 @@ class MRBestCustomers(MRJob):
         :return: ((stock, year), quantity)
         '''
         columns = re.split(r",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", line)
-        if not columns[3].isalpha(): # avoid the first row of the data.
+        if not columns[3].isalpha():  # avoid the first row of the data.
             stock = columns[1]
             quantity = int(columns[3])
             match_year = re.search('\d{4}', columns[4])
@@ -52,4 +52,4 @@ class MRBestCustomers(MRJob):
 
 
 if __name__ == '__main__':
-    MRBestCustomers.run()
+    MRBestSellingProduct.run()
