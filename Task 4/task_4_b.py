@@ -14,7 +14,7 @@ class MRBestSellingProduct(MRJob):
         :param line: one row from the input csv file
         :return: ((stock, year), totalamount)
         '''
-        columns = re.split(r",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", line)
+        columns = re.split(r",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", line)  # splits into the columns
         if not columns[3].isalpha():  # avoid the first row of the data.
             stock = columns[1]
             quantity = float(columns[3])

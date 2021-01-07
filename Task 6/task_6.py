@@ -19,7 +19,7 @@ row_counter_B = 0
 # here we open a new file named C to store the result of multiplication
 matrix_C = open("C.txt", "a")
 
-# it keeps the last key which its value is printed in the output file (it is used for organizing the output file)
+# it keeps the last key which its value is printed in the output file (it is used for well organizing the output file)
 row_printed_key = ''
 
 class MRMatrixMultiplication(MRJob):
@@ -28,11 +28,11 @@ class MRMatrixMultiplication(MRJob):
         '''
         This mapper gets each row of the two input matrices,
         and then it splits into the columns (cells).
-        Then it checks the input filename in order to compute each matrix,
-        and then it yields set of (key, value) pairs that each key has a list
+        Then it checks the input filename in order to compute each matrix separately,
+        and then it yields set of (key, value) pairs that each key has a list of value
         :param _: None
         :param line: one row from the input file
-        :return: Set of (key, value) pairs that each key has a list
+        :return: Set of (key, value) pairs that each key has a list of value
         '''
         global row_counter_A  # indicates the last iterated row number in matrix A
         global row_counter_B  # indicates the last iterated row number in matrix B
@@ -41,7 +41,7 @@ class MRMatrixMultiplication(MRJob):
         if filename == 'file://A.txt':  # checks whether the input file is matrix A
             if len(line) == cols_no_matrix_A:  # checks whether the number of the cells is equal to the number of the columns
                 row_counter_A += 1
-                # Set of (key, value) pairs that each key has a list
+                # Set of (key, value) pairs that each key has a list of value
                 for column_counter_A in range(1, cols_no_matrix_B + 1):
                     for x in range(1, len(line) + 1):
                         yield (row_counter_A, column_counter_A), ('A', x, float(line[x - 1]))
@@ -49,7 +49,7 @@ class MRMatrixMultiplication(MRJob):
         if filename == 'file://B.txt':  # checks whether the input file is matrix B
             if len(line) == cols_no_matrix_B:  # checks whether the number of the cells is equal to the number of the columns
                 row_counter_B += 1
-                # Set of (key, value) pairs that each key has a list
+                # Set of (key, value) pairs that each key has a list of value
                 for column_counter_B in range(1, rows_no_matrix_A + 1):
                     for x in range(1, len(line) + 1):
                         yield (column_counter_B, x), ('B', row_counter_B, float(line[x - 1]))
