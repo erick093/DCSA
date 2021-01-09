@@ -30,7 +30,7 @@ class MRBestSellingProduct(MRJob):
         :return: year, (sum(quantity), stock_year)
         '''
         stock, year = stock_year
-        yield year, (sum(quantity), stock_year)
+        yield year, (sum(quantity), stock)
 
     def reducer_find_max_quantity(self, _, data):
         '''

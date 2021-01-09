@@ -4,7 +4,7 @@ import re
 
 class MRBestSellingProduct(MRJob):
 
-    def mapper_get_amounts(self, _, line):
+    def mapper_get_revenues(self, _, line):
         '''
         This mapper gets each row of the csv files,
         and then it splits into the columns (cells).
@@ -12,29 +12,29 @@ class MRBestSellingProduct(MRJob):
         and then it yields the amount*quantity of each stock per year
         :param _: None
         :param line: one row from the input csv file
-        :return: ((stock, year), totalamount)
+        :return: ((stock, year), revenue)
         '''
         columns = re.split(r",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", line)  # splits into the columns
         if not columns[3].isalpha():  # avoid the first row of the data.
             stock = columns[1]
             quantity = float(columns[3])
             amount = float(columns[5])
-            totalamount = quantity * amount
+            revenue = quantity * amount
             match_year = re.search('\d{4}', columns[4])
             year = match_year.group(0)
-            yield ((stock, year), totalamount)
+            yield ((stock, year), revenue)
 
-    def reducer_sum_amounts(self, stock_year, amount):
+    def reducer_sum_revenues(self, stock_year, revenue):
         '''
         This reducer sums (amount*quantity) of each stock per each year
         :param stock_year: stockcode and the year
-        :param amount: (amount*quantity) of the stock in that year
-        :return: year, (sum(amount), stock_year)
+        :param revenue: (amount*quantity) of the stock in that year
+        :return: year, (sum(revenue), stock_year)
         '''
         stock, year = stock_year
-        yield year, (sum(amount), stock_year)
+        yield year, (sum(revenue), stock_year)
 
-    def reducer_find_max_amount(self, _, data):
+    def reducer_find_max_revenue(self, _, data):
         '''
         This reducer finds the stock with the highest sum(amount*quantity) per each year
         :param _: year
@@ -45,10 +45,10 @@ class MRBestSellingProduct(MRJob):
 
     def steps(self):
         return [
-            MRStep(mapper=self.mapper_get_amounts,
-                   reducer=self.reducer_sum_amounts),
+            MRStep(mapper=self.mapper_get_revenues,
+                   reducer=self.reducer_sum_revenues),
             MRStep(
-                   reducer=self.reducer_find_max_amount
+                   reducer=self.reducer_find_max_revenue
             )
         ]
 
